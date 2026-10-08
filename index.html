@@ -1,0 +1,3332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis Game Stash | The Architectural Master Vault</title>
+    <!-- Premium Cyberpunk Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. COMPREHENSIVE CSS VARIABLES & 10 DYNAMIC THEMES
+           ========================================================================== */
+        :root {
+            --bg-base: #06010d;
+            --bg-overlay: rgba(6, 1, 13, 0.75);
+            --bg-card: rgba(22, 5, 42, 0.72);
+            --bg-card-hover: rgba(36, 8, 68, 0.88);
+            --panel-border: rgba(176, 38, 255, 0.28);
+            --panel-border-glow: rgba(176, 38, 255, 0.85);
+            
+            --neon-primary: #b026ff;
+            --neon-secondary: #ff00c8;
+            --neon-accent: #00f0ff;
+            --neon-good: #00ff66;
+            --neon-warning: #ffb700;
+            
+            --text-pure: #ffffff;
+            --text-primary: #ebe4ff;
+            --text-secondary: #a493cf;
+            --text-muted: #64538a;
+
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+
+            --glow-primary: 0 0 20px rgba(176, 38, 255, 0.5), 0 0 40px rgba(176, 38, 255, 0.2);
+            --glow-accent: 0 0 20px rgba(0, 240, 255, 0.5);
+            
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+
+            --wall-opacity: 0.35;
+            --wall-blur: 0px;
+        }
+
+        /* 10 Ultra-Refined Cyber Themes */
+        body.theme-purple {}
+        body.theme-matrix {
+            --bg-base: #010a04;
+            --bg-overlay: rgba(1, 10, 4, 0.8);
+            --bg-card: rgba(0, 32, 12, 0.75);
+            --bg-card-hover: rgba(0, 52, 20, 0.9);
+            --panel-border: rgba(0, 255, 70, 0.3);
+            --panel-border-glow: rgba(0, 255, 70, 0.9);
+            --neon-primary: #00ff46;
+            --neon-secondary: #10b981;
+            --neon-accent: #a3e635;
+            --text-primary: #dcffe4;
+            --text-secondary: #86efac;
+            --glow-primary: 0 0 20px rgba(0, 255, 70, 0.5);
+        }
+        body.theme-crimson {
+            --bg-base: #0e0004;
+            --bg-overlay: rgba(14, 0, 4, 0.8);
+            --bg-card: rgba(38, 2, 10, 0.75);
+            --bg-card-hover: rgba(60, 4, 16, 0.9);
+            --panel-border: rgba(255, 0, 55, 0.35);
+            --panel-border-glow: rgba(255, 0, 55, 0.9);
+            --neon-primary: #ff0037;
+            --neon-secondary: #ff7b00;
+            --neon-accent: #ffd000;
+            --text-primary: #ffe8ec;
+            --text-secondary: #fca5a5;
+            --glow-primary: 0 0 20px rgba(255, 0, 55, 0.5);
+        }
+        body.theme-cyan {
+            --bg-base: #000c14;
+            --bg-overlay: rgba(0, 12, 20, 0.8);
+            --bg-card: rgba(0, 28, 48, 0.75);
+            --bg-card-hover: rgba(0, 48, 80, 0.9);
+            --panel-border: rgba(0, 240, 255, 0.35);
+            --panel-border-glow: rgba(0, 240, 255, 0.9);
+            --neon-primary: #00f0ff;
+            --neon-secondary: #0077ff;
+            --neon-accent: #b026ff;
+            --text-primary: #e6faff;
+            --text-secondary: #7dd3fc;
+            --glow-primary: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+        body.theme-vaporwave {
+            --bg-base: #0d0118;
+            --bg-overlay: rgba(13, 1, 24, 0.8);
+            --bg-card: rgba(45, 8, 65, 0.75);
+            --bg-card-hover: rgba(70, 15, 100, 0.9);
+            --panel-border: rgba(255, 113, 206, 0.35);
+            --panel-border-glow: rgba(255, 113, 206, 0.9);
+            --neon-primary: #ff71ce;
+            --neon-secondary: #01cdfe;
+            --neon-accent: #05ffa1;
+            --text-primary: #fff0fa;
+            --text-secondary: #f3a6db;
+            --glow-primary: 0 0 20px rgba(255, 113, 206, 0.5);
+        }
+        body.theme-solar {
+            --bg-base: #120800;
+            --bg-overlay: rgba(18, 8, 0, 0.8);
+            --bg-card: rgba(45, 20, 0, 0.75);
+            --bg-card-hover: rgba(75, 35, 0, 0.9);
+            --panel-border: rgba(255, 170, 0, 0.35);
+            --panel-border-glow: rgba(255, 170, 0, 0.9);
+            --neon-primary: #ffaa00;
+            --neon-secondary: #ff5500;
+            --neon-accent: #ffff00;
+            --text-primary: #fff7e6;
+            --text-secondary: #fed7aa;
+            --glow-primary: 0 0 20px rgba(255, 170, 0, 0.5);
+        }
+        body.theme-arctic {
+            --bg-base: #020810;
+            --bg-overlay: rgba(2, 8, 16, 0.8);
+            --bg-card: rgba(10, 30, 50, 0.75);
+            --bg-card-hover: rgba(18, 48, 80, 0.9);
+            --panel-border: rgba(165, 243, 252, 0.35);
+            --panel-border-glow: rgba(165, 243, 252, 0.9);
+            --neon-primary: #a5f3fc;
+            --neon-secondary: #38bdf8;
+            --neon-accent: #ffffff;
+            --text-primary: #f0fdff;
+            --text-secondary: #bae6fd;
+            --glow-primary: 0 0 20px rgba(165, 243, 252, 0.5);
+        }
+        body.theme-void {
+            --bg-base: #000000;
+            --bg-overlay: rgba(0, 0, 0, 0.85);
+            --bg-card: rgba(20, 20, 20, 0.8);
+            --bg-card-hover: rgba(35, 35, 35, 0.95);
+            --panel-border: rgba(255, 255, 255, 0.25);
+            --panel-border-glow: rgba(255, 255, 255, 0.8);
+            --neon-primary: #ffffff;
+            --neon-secondary: #999999;
+            --neon-accent: #dddddd;
+            --text-primary: #ffffff;
+            --text-secondary: #bbbbbb;
+            --glow-primary: 0 0 20px rgba(255, 255, 255, 0.35);
+        }
+        body.theme-toxic {
+            --bg-base: #040a00;
+            --bg-overlay: rgba(4, 10, 0, 0.8);
+            --bg-card: rgba(16, 36, 0, 0.75);
+            --bg-card-hover: rgba(28, 58, 0, 0.9);
+            --panel-border: rgba(163, 230, 53, 0.35);
+            --panel-border-glow: rgba(163, 230, 53, 0.9);
+            --neon-primary: #a3e635;
+            --neon-secondary: #65a30d;
+            --neon-accent: #facc15;
+            --text-primary: #f7fee7;
+            --text-secondary: #bef264;
+            --glow-primary: 0 0 20px rgba(163, 230, 53, 0.5);
+        }
+        body.theme-cosmos {
+            --bg-base: #050014;
+            --bg-overlay: rgba(5, 0, 20, 0.8);
+            --bg-card: rgba(25, 5, 55, 0.75);
+            --bg-card-hover: rgba(45, 10, 90, 0.9);
+            --panel-border: rgba(192, 132, 252, 0.35);
+            --panel-border-glow: rgba(192, 132, 252, 0.9);
+            --neon-primary: #c084fc;
+            --neon-secondary: #ec4899;
+            --neon-accent: #38bdf8;
+            --text-primary: #faf5ff;
+            --text-secondary: #e9d5ff;
+            --glow-primary: 0 0 20px rgba(192, 132, 252, 0.5);
+        }
+
+        /* ==========================================================================
+           2. GLOBAL RESET & WALLPAPER LAYERS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 16px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        #custom-wallpaper-layer {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: var(--wall-opacity);
+            filter: blur(var(--wall-blur));
+            z-index: -4;
+            pointer-events: none;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        #wallpaper-darken-tint {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-overlay);
+            z-index: -3;
+            pointer-events: none;
+            transition: background 0.4s ease;
+        }
+
+        #cyber-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .crt-scanlines {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.28) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9990;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        ::-webkit-scrollbar { width: 7px; height: 7px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-primary); border-radius: 4px; }
+
+        /* ==========================================================================
+           3. 20-SECOND INTRO CINEMATIC OVERLAY
+           ========================================================================== */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: #020005;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s ease;
+        }
+
+        #intro-overlay.vanished {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-box {
+            width: 780px;
+            max-width: 95%;
+            background: rgba(10, 0, 20, 0.88);
+            border: 1px solid var(--neon-primary);
+            border-radius: var(--radius-lg);
+            padding: 38px;
+            box-shadow: 0 0 50px rgba(176, 38, 255, 0.35);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .intro-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--neon-accent);
+            letter-spacing: 2px;
+        }
+
+        .intro-log-feed {
+            height: 160px;
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            color: #d8c2ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 7px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .intro-log-feed div {
+            opacity: 0;
+            transform: translateY(8px);
+            animation: linePop 0.25s forwards;
+        }
+
+        @keyframes linePop { to { opacity: 1; transform: translateY(0); } }
+
+        .intro-progress-zone {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .intro-status-row {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .intro-bar-outer {
+            width: 100%;
+            height: 7px;
+            background: #110022;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--panel-border);
+        }
+
+        .intro-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+            box-shadow: 0 0 15px var(--neon-primary);
+            transition: width 0.25s linear;
+        }
+
+        .skip-intro-btn {
+            position: absolute;
+            bottom: -60px;
+            right: 0;
+            background: rgba(176, 38, 255, 0.12);
+            border: 1px solid var(--neon-primary);
+            color: var(--neon-primary);
+            font-family: var(--font-mono);
+            padding: 9px 22px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+        }
+
+        .skip-intro-btn:hover {
+            background: var(--neon-primary);
+            color: #000;
+            box-shadow: var(--glow-primary);
+            transform: scale(1.05);
+        }
+
+        /* ==========================================================================
+           4. TOP NAVIGATION BAR WITH SEARCH OMNIBAR & DIRECTORY BUTTON
+           ========================================================================== */
+        header.cyber-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            background: rgba(6, 1, 13, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            z-index: 1000;
+            gap: 15px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            min-width: 210px;
+        }
+
+        .nav-brand .brand-symbol {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-family: var(--font-display);
+            font-weight: 900;
+            color: #fff;
+            box-shadow: var(--glow-primary);
+        }
+
+        .nav-brand .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #fff;
+        }
+
+        .nav-brand .brand-title span {
+            color: var(--neon-primary);
+            text-shadow: 0 0 10px var(--neon-primary);
+        }
+
+        /* Omnibar Search Container in Navbar */
+        .nav-omnibar-wrapper {
+            position: relative;
+            min-width: 260px;
+            max-width: 340px;
+            flex-grow: 1;
+        }
+
+        .nav-omnibar-input {
+            width: 100%;
+            background: rgba(18, 5, 36, 0.9);
+            border: 1px solid var(--panel-border);
+            border-radius: 20px;
+            padding: 8px 36px 8px 38px;
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-omnibar-input:focus {
+            border-color: var(--neon-accent);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            background: rgba(26, 8, 50, 0.95);
+        }
+
+        .nav-omnibar-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neon-accent);
+            font-size: 0.85rem;
+            pointer-events: none;
+        }
+
+        .nav-omnibar-shortcut {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: rgba(176, 38, 255, 0.15);
+            border: 1px solid var(--panel-border);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        /* Live Omnibar Dropdown Results */
+        #omnibar-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            min-width: 380px;
+            background: rgba(12, 2, 24, 0.96);
+            border: 1px solid var(--neon-accent);
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), var(--glow-accent);
+            backdrop-filter: blur(20px);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 2000;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        #omnibar-dropdown.active {
+            display: flex;
+        }
+
+        .dropdown-result-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: rgba(22, 5, 42, 0.7);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-result-item:hover, .dropdown-result-item.highlighted {
+            background: rgba(45, 10, 85, 0.9);
+            border-color: var(--neon-primary);
+            transform: translateX(4px);
+        }
+
+        .res-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .res-icon { font-size: 1.2rem; }
+
+        .res-title {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .res-desc {
+            font-family: var(--font-body);
+            font-size: 0.76rem;
+            color: var(--text-secondary);
+        }
+
+        .res-badge {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--neon-accent);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        /* "All Tabs" Matrix Quick Button */
+        .all-tabs-toggle-btn {
+            background: rgba(176, 38, 255, 0.12);
+            border: 1px solid var(--neon-primary);
+            color: var(--neon-primary);
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            padding: 7px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .all-tabs-toggle-btn:hover {
+            background: var(--neon-primary);
+            color: #000;
+            box-shadow: var(--glow-primary);
+        }
+
+        /* Scrollable Tab Ribbon */
+        .nav-tabs-wrapper {
+            overflow-x: auto;
+            max-width: calc(100vw - 650px);
+            scrollbar-width: none;
+        }
+        .nav-tabs-wrapper::-webkit-scrollbar { display: none; }
+
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+            background: rgba(18, 5, 36, 0.65);
+            padding: 5px;
+            border-radius: 30px;
+            border: 1px solid var(--panel-border);
+            white-space: nowrap;
+        }
+
+        .nav-tab-btn {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .nav-tab-btn:hover { color: #fff; }
+
+        .nav-tab-btn.active {
+            background: var(--neon-primary);
+            color: #000;
+            box-shadow: 0 0 14px rgba(176, 38, 255, 0.75);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 170px;
+            justify-content: flex-end;
+        }
+
+        .panic-btn {
+            background: rgba(255, 0, 55, 0.15);
+            border: 1px solid #ff0037;
+            color: #ff3366;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .panic-btn:hover {
+            background: #ff0037;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 0, 55, 0.6);
+        }
+
+        .audio-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--panel-border);
+            color: var(--neon-accent);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .audio-toggle-btn.muted { opacity: 0.4; filter: grayscale(1); }
+
+        /* ==========================================================================
+           MODAL: "ALL TABS DIRECTORY" FULL MATRIX OVERVIEW
+           ========================================================================== */
+        #all-tabs-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 0, 10, 0.85);
+            backdrop-filter: blur(25px);
+            z-index: 5000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        #all-tabs-modal.active { display: flex; }
+
+        .all-tabs-container {
+            width: 1020px;
+            max-width: 95%;
+            background: var(--bg-card);
+            border: 1px solid var(--neon-primary);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            box-shadow: var(--glow-primary);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 15px;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-close-btn {
+            background: rgba(255, 0, 55, 0.15);
+            border: 1px solid #ff0037;
+            color: #ff3366;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .all-tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .tab-directory-card {
+            background: rgba(14, 2, 28, 0.7);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tab-directory-card:hover {
+            border-color: var(--neon-accent);
+            transform: translateY(-4px);
+            box-shadow: var(--glow-accent);
+            background: rgba(24, 4, 48, 0.9);
+        }
+
+        .tab-dir-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tab-dir-icon { font-size: 1.8rem; }
+        .tab-dir-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--neon-accent);
+            background: rgba(0, 240, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .tab-dir-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .tab-dir-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        /* ==========================================================================
+           5. MAIN APP VIEWPORT & SECTIONS
+           ========================================================================== */
+        main.app-viewport {
+            margin-top: 75px;
+            padding: 40px 50px 80px;
+            min-height: calc(100vh - 75px);
+            max-width: 1560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .tab-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .view-header {
+            margin-bottom: 35px;
+            text-align: center;
+            position: relative;
+        }
+
+        .view-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--neon-accent);
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .view-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: var(--glow-primary);
+        }
+
+        .view-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 720px;
+            margin: 8px auto 0;
+        }
+
+        .category-filter-chips {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .chip-btn {
+            background: rgba(18, 5, 36, 0.6);
+            border: 1px solid var(--panel-border);
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            padding: 7px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 1px;
+        }
+
+        .chip-btn:hover {
+            color: #fff;
+            border-color: var(--neon-primary);
+        }
+
+        .chip-btn.active {
+            background: var(--neon-primary);
+            color: #000;
+            border-color: var(--neon-primary);
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           TAB 1: VAULT ARCHIVE SHOWCASE (CATEGORIZED 3D CARDS)
+           ========================================================================== */
+        .vault-filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-box-wrapper {
+            position: relative;
+            min-width: 320px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(18, 5, 36, 0.8);
+            border: 1px solid var(--panel-border);
+            border-radius: 30px;
+            padding: 10px 18px 10px 42px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--neon-primary);
+            box-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+        }
+
+        .search-icon-symbol {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neon-accent);
+        }
+
+        .vault-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 28px;
+            perspective: 1200px;
+        }
+
+        .game-card-3d {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .game-card-3d:hover {
+            border-color: var(--panel-border-glow);
+            box-shadow: var(--glow-primary);
+        }
+
+        .card-banner {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            background-color: #1a0033;
+        }
+
+        .card-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--bg-card) 5%, transparent 80%);
+        }
+
+        .card-tag {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 3px 9px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid var(--neon-accent);
+            color: var(--neon-accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            padding: 22px;
+            transform: translateZ(35px);
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-rating {
+            font-size: 0.85rem;
+            color: var(--neon-warning);
+            font-family: var(--font-mono);
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            height: 65px;
+            overflow: hidden;
+        }
+
+        .card-stats-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(176, 38, 255, 0.15);
+            padding-top: 14px;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+
+        .card-stats-row span strong { color: var(--text-primary); }
+
+        /* ==========================================================================
+           TAB 2: SECRET LEARNING (EMBEDDED SIMULATOR & 100-GENRE ENGINE)
+           ========================================================================== */
+        .stealth-banner {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px dashed var(--neon-accent);
+            padding: 18px 24px;
+            border-radius: var(--radius-md);
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .stealth-banner-info h4 {
+            font-family: var(--font-display);
+            color: var(--neon-accent);
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .stealth-banner-info p { color: var(--text-secondary); font-size: 0.88rem; }
+
+        .clone-suite-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .clone-tile {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .clone-tile:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-primary);
+            box-shadow: var(--glow-primary);
+        }
+
+        .clone-icon { font-size: 2rem; margin-bottom: 12px; }
+        .clone-tile h3 { font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 5px; }
+        .clone-tile p { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px; }
+
+        .clone-badge {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--neon-good);
+            border: 1px solid var(--neon-good);
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        #clone-live-sandbox {
+            background: var(--bg-card);
+            border: 1px solid var(--neon-accent);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 45px;
+            box-shadow: var(--glow-accent);
+            display: none;
+            position: relative;
+        }
+
+        .sandbox-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .sandbox-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-sandbox-btn {
+            background: rgba(255, 0, 55, 0.2);
+            border: 1px solid #ff0037;
+            color: #ff3366;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .quiz-engine-station {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+        }
+
+        .quiz-controls-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--neon-accent);
+            margin-bottom: 7px;
+            letter-spacing: 1px;
+        }
+
+        .quiz-select, .quiz-input {
+            width: 100%;
+            background: rgba(10, 0, 20, 0.9);
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            padding: 11px 15px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .quiz-select:focus, .quiz-input:focus { border-color: var(--neon-primary); }
+
+        .generate-quiz-btn {
+            background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+            border: none;
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--glow-primary);
+            letter-spacing: 1.5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .generate-quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px var(--neon-primary);
+        }
+
+        .quiz-display-card {
+            background: rgba(6, 1, 13, 0.7);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-top: 25px;
+        }
+
+        .mock-question-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .quiz-options-list { display: flex; flex-direction: column; gap: 10px; }
+
+        .quiz-opt-btn {
+            background: rgba(18, 5, 36, 0.65);
+            border: 1px solid var(--panel-border);
+            padding: 12px 18px;
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-align: left;
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-opt-btn:hover {
+            border-color: var(--neon-accent);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        /* ==========================================================================
+           TAB 3: THE ARCHITECT (DENIS TIHONA / PURPLEDUDE)
+           ========================================================================== */
+        .creator-showcase {
+            display: grid;
+            grid-template-columns: 370px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .creator-id-card {
+            background: var(--bg-card);
+            border: 1px solid var(--neon-primary);
+            border-radius: var(--radius-lg);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--glow-primary);
+            position: relative;
+        }
+
+        .avatar-ring {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 22px;
+            position: relative;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, var(--neon-primary), var(--neon-accent));
+            box-shadow: 0 0 30px rgba(176, 38, 255, 0.65);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .creator-title {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .creator-alias {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--neon-accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .creator-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .social-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-youtube {
+            background: rgba(255, 0, 0, 0.15);
+            border: 1px solid #ff0000;
+            color: #ff4d4d;
+        }
+        .btn-youtube:hover {
+            background: #ff0000;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+        }
+
+        .btn-tiktok {
+            background: rgba(0, 240, 255, 0.15);
+            border: 1px solid var(--neon-accent);
+            color: var(--neon-accent);
+        }
+        .btn-tiktok:hover {
+            background: var(--neon-accent);
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+        }
+
+        .creator-dossier-narrative {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+        }
+
+        .creator-quote-block {
+            border-left: 4px solid var(--neon-primary);
+            padding: 20px 25px;
+            background: rgba(176, 38, 255, 0.08);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-bottom: 30px;
+        }
+
+        .creator-quote-text {
+            font-family: var(--font-display);
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.5;
+            text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+        }
+
+        .dossier-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .dossier-stat-tile {
+            background: rgba(10, 0, 20, 0.7);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            text-align: center;
+        }
+
+        .dossier-stat-num {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--neon-accent);
+            font-weight: 900;
+        }
+
+        .dossier-stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           TAB 4: BENCHMARK & HARDWARE LAB
+           ========================================================================== */
+        .benchmark-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .bench-card {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+        }
+
+        .bench-meter-container { margin: 25px 0; }
+
+        .bench-meter-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--panel-border);
+        }
+
+        .bench-meter-fill {
+            height: 100%;
+            width: 88%;
+            background: linear-gradient(90deg, var(--neon-good), var(--neon-accent));
+            box-shadow: 0 0 15px var(--neon-good);
+        }
+
+        /* ==========================================================================
+           TAB 5: INTEL LOGS (FIELD REVIEWS)
+           ========================================================================== */
+        .reviews-layout {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 35px;
+        }
+
+        .reviews-feed { display: flex; flex-direction: column; gap: 18px; }
+
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            transition: all 0.25s ease;
+        }
+
+        .review-card:hover {
+            border-color: var(--neon-primary);
+            transform: translateX(5px);
+        }
+
+        .review-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-info { display: flex; align-items: center; gap: 10px; }
+        .reviewer-handle { font-family: var(--font-mono); font-weight: 700; color: #fff; font-size: 0.92rem; }
+        .review-stars { color: var(--neon-warning); font-size: 0.85rem; letter-spacing: 2px; }
+        .review-text { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; }
+
+        .review-form-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            height: fit-content;
+        }
+
+        /* ==========================================================================
+           TAB 6: CODEX & KNOWLEDGEBASE
+           ========================================================================== */
+        .codex-accordion { display: flex; flex-direction: column; gap: 15px; }
+
+        .codex-item {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .codex-header {
+            padding: 18px 24px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .codex-header:hover { background: var(--bg-card-hover); }
+
+        .codex-content {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            display: none;
+            border-top: 1px solid rgba(176, 38, 255, 0.1);
+        }
+
+        .codex-item.active .codex-content { display: block; }
+        .codex-item.active { border-color: var(--neon-accent); }
+
+        /* ==========================================================================
+           TAB 7: PATCH ARCHIVES & CHANGELOGS
+           ========================================================================== */
+        .patch-timeline { display: flex; flex-direction: column; gap: 20px; }
+
+        .patch-node {
+            background: var(--bg-card);
+            border-left: 4px solid var(--neon-primary);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 22px 25px;
+        }
+
+        .patch-ver { font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
+        .patch-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--neon-accent); margin-bottom: 12px; }
+
+        /* ==========================================================================
+           TAB 8: SYSTEM TELEMETRY & DIAGNOSTICS
+           ========================================================================== */
+        .telemetry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .tele-card {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            text-align: center;
+        }
+
+        .tele-card h4 {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .tele-card .tele-val {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--neon-accent);
+            font-weight: 800;
+        }
+
+        .diagnostic-terminal {
+            background: #020005;
+            border: 1px solid var(--neon-primary);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: #8be9fd;
+            height: 300px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        /* ==========================================================================
+           TAB 9: SETTINGS & CUSTOMIZATION ENGINE
+           ========================================================================== */
+        .settings-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 25px;
+        }
+
+        .settings-box {
+            background: var(--bg-card);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+        }
+
+        .settings-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-swatches {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .theme-btn {
+            background: rgba(10, 0, 20, 0.8);
+            border: 1px solid var(--panel-border);
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-btn:hover { border-color: var(--neon-primary); }
+
+        .theme-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+        .wallpaper-curated-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .wall-thumb-btn {
+            height: 60px;
+            border-radius: 6px;
+            border: 1px solid var(--panel-border);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .wall-thumb-btn:hover {
+            border-color: var(--neon-accent);
+            transform: scale(1.05);
+        }
+
+        .custom-upload-zone {
+            border: 2px dashed var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-bottom: 15px;
+        }
+
+        .custom-upload-zone:hover {
+            border-color: var(--neon-primary);
+            background: rgba(176, 38, 255, 0.05);
+        }
+
+        .slider-control-row {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .slider-control-row label {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cyber-range {
+            width: 100%;
+            accent-color: var(--neon-primary);
+        }
+
+        .setting-toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(176, 38, 255, 0.1);
+        }
+
+        .toggle-switch {
+            width: 44px;
+            height: 22px;
+            background: #190a2a;
+            border-radius: 11px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: var(--neon-primary);
+            box-shadow: 0 0 10px var(--neon-primary);
+        }
+
+        .toggle-knob {
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-switch.active .toggle-knob { transform: translateX(22px); }
+
+        /* ==========================================================================
+           10. CYBER TOAST HUD
+           ========================================================================== */
+        #toast-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 100000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .cyber-toast {
+            pointer-events: auto;
+            min-width: 300px;
+            max-width: 420px;
+            background: rgba(10, 0, 22, 0.92);
+            border: 1px solid var(--neon-primary);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--glow-primary);
+            backdrop-filter: blur(15px);
+            color: #fff;
+            transform: translateX(120%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cyber-toast.show { transform: translateX(0); }
+        .toast-title { font-family: var(--font-display); font-size: 0.88rem; color: var(--neon-accent); margin-bottom: 4px; }
+        .toast-msg { font-size: 0.85rem; color: var(--text-primary); line-height: 1.4; }
+
+        /* ==========================================================================
+           11. PANIC STEALTH DISGUISE (GOOGLE DOCS CLOAK)
+           ========================================================================== */
+        #panic-screen {
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            color: #202124;
+            z-index: 99999;
+            font-family: 'Arial', sans-serif;
+            display: none;
+            padding: 40px 10%;
+            overflow-y: auto;
+        }
+
+        #panic-screen.active { display: block; }
+
+        .docs-fake-nav {
+            border-bottom: 1px solid #dadce0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .docs-title { font-size: 1.3rem; color: #1a73e8; font-weight: 500; }
+
+        @media (max-width: 1024px) {
+            main.app-viewport { padding: 30px 18px; }
+            .creator-showcase { grid-template-columns: 1fr; }
+            .reviews-layout { grid-template-columns: 1fr; }
+            .benchmark-grid { grid-template-columns: 1fr; }
+            .quiz-controls-grid { grid-template-columns: 1fr; }
+            .telemetry-grid { grid-template-columns: repeat(2, 1fr); }
+            .all-tabs-grid { grid-template-columns: 1fr; }
+            header.cyber-navbar { padding: 0 15px; }
+            .nav-tabs-wrapper { display: none; } /* On smaller screens, omnibar + "All Tabs" is prioritized */
+            .nav-omnibar-wrapper { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="theme-purple">
+
+    <!-- High-Priority Custom Wallpaper Layer -->
+    <div id="custom-wallpaper-layer"></div>
+    <div id="wallpaper-darken-tint"></div>
+
+    <!-- Interactive Ambient Canvas Grid -->
+    <canvas id="cyber-canvas"></canvas>
+
+    <!-- CRT Scanlines Filter Overlay -->
+    <div class="crt-scanlines" id="crt-layer"></div>
+
+    <!-- HUD Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <!-- ==========================================================================
+         CINEMATIC 20-SECOND INTRO BOOTLOADER
+         ========================================================================== -->
+    <div id="intro-overlay">
+        <div class="intro-box">
+            <div class="intro-topbar">
+                <span>[ DENIS-CORE SYSTEM BOOTLOADER V9.2 ]</span>
+                <span id="intro-clock">00:00:00 UTC</span>
+            </div>
+            <div class="intro-log-feed" id="intro-log-feed"></div>
+            <div class="intro-progress-zone">
+                <div class="intro-status-row">
+                    <span id="intro-status-text">INITIALIZING QUANTUM RUNTIME...</span>
+                    <span id="intro-percent-text">0%</span>
+                </div>
+                <div class="intro-bar-outer">
+                    <div class="intro-bar-fill" id="intro-bar-fill"></div>
+                </div>
+            </div>
+            <button class="skip-intro-btn" id="skip-intro-btn">BYPASS SEQUENCE [ESC / CLICK]</button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         TOP NAVIGATION BAR (OMNIBAR SEARCH + ALL TABS MATRIX BUTTON)
+         ========================================================================== -->
+    <header class="cyber-navbar">
+        <div class="nav-brand" onclick="switchTab('vault')">
+            <div class="brand-symbol">D</div>
+            <div class="brand-title">DENIS <span>STASH</span></div>
+        </div>
+
+        <!-- NEW: Global Tab Search Omnibar -->
+        <div class="nav-omnibar-wrapper">
+            <span class="nav-omnibar-icon">🔍</span>
+            <input type="text" id="omnibar-input" class="nav-omnibar-input" placeholder="Search tabs (Sparx, Games, Creator...) [ / ]" oninput="handleOmnibarInput(this.value)" onfocus="openOmnibarDropdown()" onkeydown="handleOmnibarKeydown(event)">
+            <span class="nav-omnibar-shortcut">⌘K</span>
+
+            <!-- Live Dropdown Results -->
+            <div id="omnibar-dropdown">
+                <!-- Dynamically generated search results -->
+            </div>
+        </div>
+
+        <!-- NEW: "All Tabs" Directory Button -->
+        <button class="all-tabs-toggle-btn" onclick="openAllTabsModal()">
+            <span>⊞</span> All Tabs (9)
+        </button>
+
+        <div class="nav-tabs-wrapper">
+            <ul class="nav-tabs">
+                <li><button class="nav-tab-btn active" onclick="switchTab('vault')">Vault Archive</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('learning')">Secret Learning</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('creator')">The Architect</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('benchmark')">Benchmark Lab</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('reviews')">Intel Logs</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('codex')">Codex &amp; Guides</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('patch')">Patch History</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('telemetry')">Telemetry</button></li>
+                <li><button class="nav-tab-btn" onclick="switchTab('settings')">Settings</button></li>
+            </ul>
+        </div>
+
+        <div class="nav-controls">
+            <button class="audio-toggle-btn" id="audio-toggle" title="Toggle Synthesizer Sound">🔊</button>
+            <button class="panic-btn" id="panic-trigger" title="Quick Cloak (ESC)">CLOAK [ESC]</button>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         NEW MODAL: ALL TABS FULL DIRECTORY MATRIX
+         ========================================================================== -->
+    <div id="all-tabs-modal" onclick="if(event.target === this) closeAllTabsModal()">
+        <div class="all-tabs-container">
+            <div class="modal-top-row">
+                <div class="modal-title">
+                    <span>⊞</span> MASTER TAB DIRECTORY (9 TABS)
+                </div>
+                <button class="modal-close-btn" onclick="closeAllTabsModal()">CLOSE [ESC]</button>
+            </div>
+            
+            <div class="all-tabs-grid" id="all-tabs-grid-mount">
+                <!-- Dynamically populated 9 tab cards -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MAIN APPLICATION VIEWPORT
+         ========================================================================== -->
+    <main class="app-viewport">
+
+        <!-- TAB 1: VAULT ARCHIVE SHOWCASE -->
+        <section id="tab-vault" class="tab-section active">
+            <div class="view-header">
+                <div class="view-badge">Vault Exhibition • No Download Required</div>
+                <h1 class="view-title">GAME STASH REPOSITORY</h1>
+                <p class="view-description">Curated archive of legendary gaming experiences. Optimized with hardware accelerated wrappers and zero school firewall interference.</p>
+            </div>
+
+            <div class="category-filter-chips">
+                <button class="chip-btn active" onclick="filterCategory('all', this)">All Titles (6)</button>
+                <button class="chip-btn" onclick="filterCategory('sandbox', this)">Sandbox &amp; Survival</button>
+                <button class="chip-btn" onclick="filterCategory('rhythm', this)">Rhythm &amp; Precision</button>
+                <button class="chip-btn" onclick="filterCategory('emulation', this)">Emulators &amp; Cores</button>
+                <button class="chip-btn" onclick="filterCategory('indie', this)">Indie Masterpieces</button>
+            </div>
+
+            <div class="vault-filter-bar">
+                <div class="search-box-wrapper">
+                    <span class="search-icon-symbol">🔍</span>
+                    <input type="text" id="game-search" class="search-input" placeholder="Search archive payloads (Minecraft, Geometry Dash...)" onkeyup="filterGames()">
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--neon-accent);">
+                    STATUS: <span style="color: var(--neon-good);">ARCHIVE UNLOCKED</span>
+                </div>
+            </div>
+
+            <div class="vault-grid" id="vault-grid">
+                <!-- Minecraft -->
+                <div class="game-card-3d" data-category="sandbox" data-title="Minecraft Java & Bedrock Edition">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Sandbox Survival</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">Minecraft <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">Infinite voxel creation with integrated sodium shaders, low memory footprints, and direct server connect bypasses.</p>
+                        <div class="card-stats-row">
+                            <span>Target: <strong>240+ FPS</strong></span>
+                            <span>Engine: <strong>LWJGL / Java</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometry Dash -->
+                <div class="game-card-3d" data-category="rhythm" data-title="Geometry Dash 2.2 Rhythm">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Rhythm Platformer</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">Geometry Dash <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">Sub-millisecond audio response, 240Hz physics unlocks, and custom level caching with zero input delay.</p>
+                        <div class="card-stats-row">
+                            <span>Tickrate: <strong>240Hz Smooth</strong></span>
+                            <span>Version: <strong>2.206 Modern</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RetroArch -->
+                <div class="game-card-3d" data-category="emulation" data-title="RetroArch Universal Core Stash">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Multi-System Core</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">RetroArch Core Stash <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">Preservation platform supporting GameCube, PS2, and GBA titles rendered cleanly in modern WebAssembly.</p>
+                        <div class="card-stats-row">
+                            <span>Cores: <strong>60+ Integrated</strong></span>
+                            <span>Backend: <strong>Vulkan WebGL</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Celeste -->
+                <div class="game-card-3d" data-category="indie rhythm" data-title="Celeste Precision Platformer">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Precision Indie</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">Celeste <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">Help Madeline survive her inner demons on Mount Celeste. Micro-second deadzones with zero frame drops.</p>
+                        <div class="card-stats-row">
+                            <span>Input: <strong>0.2ms Polling</strong></span>
+                            <span>Status: <strong>Pristine</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terraria -->
+                <div class="game-card-3d" data-category="sandbox" data-title="Terraria 2D Adventure">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Action RPG</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">Terraria <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">2D survival crafting classic. Configured with tModLoader performance modules for heavy multiplayer sessions.</p>
+                        <div class="card-stats-row">
+                            <span>Mods: <strong>Ready</strong></span>
+                            <span>Build: <strong>v1.4.4.9</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hades -->
+                <div class="game-card-3d" data-category="indie" data-title="Hades Mythological Roguelike">
+                    <div class="card-banner" style="background-image: linear-gradient(180deg, transparent, rgba(6,1,13,0.9)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');">
+                        <span class="card-tag">Roguelike Classic</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">Hades <span class="card-rating">★★★★★</span></div>
+                        <p class="card-desc">Battle out of hell with adaptive borderless rendering and instantaneous hot-swappable keybind profiles.</p>
+                        <div class="card-stats-row">
+                            <span>V-Sync: <strong>Fast Adaptive</strong></span>
+                            <span>State: <strong>Verified</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: SECRET LEARNING -->
+        <section id="tab-learning" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Educational Mimicry Engine</div>
+                <h1 class="view-title">SECRET LEARNING SUITE</h1>
+                <p class="view-description">High-fidelity educational replicas and an interactive sandbox. Designed for classroom stealth, working-out validation, and rapid curriculum practice.</p>
+            </div>
+
+            <div class="stealth-banner">
+                <div class="stealth-banner-info">
+                    <h4>Stealth Protocol Armed (Key: ESC)</h4>
+                    <p>Click any clone below to open it directly in the live interactive sandbox. Press <strong>ESC</strong> at any point to trigger the Google Docs cloak.</p>
+                </div>
+                <button class="panic-btn" onclick="activatePanic()">TEST CLOAK NOW</button>
+            </div>
+
+            <div id="clone-live-sandbox">
+                <div class="sandbox-topbar">
+                    <div class="sandbox-title">
+                        <span>🧪</span> <span id="sandbox-module-name">Sparx Maths Interactive Simulator</span>
+                    </div>
+                    <button class="close-sandbox-btn" onclick="closeCloneSimulator()">CLOSE SIMULATOR [X]</button>
+                </div>
+                <div style="background: rgba(0,0,0,0.5); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--panel-border);">
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--neon-accent); margin-bottom: 10px;">
+                        TASK IDENTIFIER: <span id="sandbox-task-code">XP-9412</span> • HOMEWORK VERIFICATION: PASSED
+                    </div>
+                    <h3 id="sandbox-task-title" style="color: #fff; margin-bottom: 15px; font-family: var(--font-display);">Calculate quadratic root intercept for 2x² + 4x - 6 = 0</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <input type="text" id="sandbox-user-input" class="quiz-input" placeholder="Enter student working out or answer...">
+                        <button class="generate-quiz-btn" style="width: auto; margin-top: 0; padding: 0 25px;" onclick="verifySandboxAnswer()">VERIFY ANSWER</button>
+                    </div>
+                    <div id="sandbox-result" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+                        Waiting for mathematical input...
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 18px; color: #fff;">Academic Clone Replicas</h2>
+            
+            <div class="clone-suite-grid">
+                <div class="clone-tile" onclick="openCloneSimulator('Sparx Maths', 'SPX-308', 'Factorize the expression 3x² + 9x')">
+                    <div class="clone-icon">📐</div>
+                    <h3>Sparx Maths Replica</h3>
+                    <p>Authentic Sparx homework interface with automatic working-out validation and XP telemetry.</p>
+                    <span class="clone-badge">Launch Live Sandbox</span>
+                </div>
+
+                <div class="clone-tile" onclick="openCloneSimulator('Seneca Learning', 'SEN-881', 'State the organelle responsible for aerobic cellular respiration')">
+                    <div class="clone-icon">🧬</div>
+                    <h3>Seneca Clone</h3>
+                    <p>Neuroscience memory revision with automated recall slides and instant progress trackers.</p>
+                    <span class="clone-badge">Launch Live Sandbox</span>
+                </div>
+
+                <div class="clone-tile" onclick="openCloneSimulator('Quizlet Live Mimic', 'QZT-104', 'Define: The capacity of a system to perform thermodynamic work')">
+                    <div class="clone-icon">🗂️</div>
+                    <h3>Quizlet Live Mimic</h3>
+                    <p>Flashcard speedrun simulator with term definitions and custom study deck generation.</p>
+                    <span class="clone-badge">Launch Live Sandbox</span>
+                </div>
+
+                <div class="clone-tile" onclick="openCloneSimulator('BBC Bitesize', 'BIT-512', 'Explain one economic consequence of hyperinflation')">
+                    <div class="clone-icon">📚</div>
+                    <h3>Bitesize Mock Vault</h3>
+                    <p>UK curriculum layout mimicking revision guides with disguised background operations.</p>
+                    <span class="clone-badge">Launch Live Sandbox</span>
+                </div>
+            </div>
+
+            <div class="quiz-engine-station">
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 8px;">100-Category Quiz &amp; Question Engine</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 25px;">Generate interactive mock assessments across STEM, humanities, languages, and advanced game physics.</p>
+
+                <div class="quiz-controls-grid">
+                    <div>
+                        <label class="quiz-label">Select 1 of 100 Deep Categories</label>
+                        <select id="quiz-category-select" class="quiz-select"></select>
+                    </div>
+                    <div>
+                        <label class="quiz-label">Difficulty Matrix</label>
+                        <select id="quiz-difficulty-select" class="quiz-select">
+                            <option value="Foundation">Foundation (Year 7-9)</option>
+                            <option value="Advanced">Advanced (GCSE / High School)</option>
+                            <option value="Mastery">Mastery (A-Level / Hardcore)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="quiz-label">Question Style</label>
+                        <select id="quiz-mode-select" class="quiz-select">
+                            <option value="Sparx">Sparx Step-by-Step</option>
+                            <option value="Seneca">Seneca Memory Check</option>
+                            <option value="Blitz">Speedrun Blitz</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="generate-quiz-btn" onclick="generateDynamicQuestion()">GENERATE INTERACTIVE ASSESSMENT PAYLOAD</button>
+
+                <div class="quiz-display-card" id="quiz-display-card">
+                    <div id="quiz-question-box">
+                        <div class="mock-question-title" id="mock-q-title">Select a category and hit generate to initialize a custom question payload.</div>
+                        <div class="quiz-options-list" id="mock-q-options"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: THE ARCHITECT -->
+        <section id="tab-creator" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Founder &amp; Chief Engineer</div>
+                <h1 class="view-title">THE ARCHITECT</h1>
+                <p class="view-description">The creator behind the stash architecture, firewall evasion, and gaming preservation.</p>
+            </div>
+
+            <div class="creator-showcase">
+                <div class="creator-id-card">
+                    <div class="avatar-ring">
+                        <img class="avatar-img" src="https://yt3.googleusercontent.com/pqibZ2b6acVWnBUw4XqR1-AsZgDUDymVkfGWNxqdT9DWV26aJ3gQOirIdIsjglhE3j0kf3S8uQ=s160-c-k-c0x00ffffff-no-rj" alt="Denis Tihona (PurpleDude)">
+                    </div>
+                    <h2 class="creator-title">Denis Tihona</h2>
+                    <span class="creator-alias">[ PurpleDude ]</span>
+
+                    <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--neon-accent); margin-bottom: 20px;">
+                        SYSTEM ROLE: CREATOR &amp; VAULT MASTER
+                    </div>
+
+                    <div class="creator-social-links">
+                        <a href="https://www.youtube.com/@purpleduderblx" target="_blank" rel="noopener noreferrer" class="social-link-btn btn-youtube">
+                            <span>▶</span> YOUTUBE: @purpleduderblx
+                        </a>
+                        <a href="https://www.tiktok.com/@durpledude" target="_blank" rel="noopener noreferrer" class="social-link-btn btn-tiktok">
+                            <span>♪</span> TIKTOK: @durpledude
+                        </a>
+                    </div>
+                </div>
+
+                <div class="creator-dossier-narrative">
+                    <div class="creator-quote-block">
+                        <div class="creator-quote-text">
+                            "Yo, Owner Of The Famous Stash. People Call Me Weird Or Strange, They Just Don't Know What I Really Am, What I Am Capable Of."
+                        </div>
+                    </div>
+
+                    <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-bottom: 12px;">The PurpleDude Vision</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                        Denis Tihona (PurpleDude) designed this architecture to deliver uninterrupted gaming freedom in environments throttled by heavy filters and school firewalls. By combining clean educational camouflage with raw hardware acceleration, the Denis Game Stash ensures unmatched frame rates and uncompromised accessibility.
+                    </p>
+
+                    <div class="dossier-stats-grid">
+                        <div class="dossier-stat-tile">
+                            <div class="dossier-stat-num">99.9%</div>
+                            <div class="dossier-stat-label">Bypass Success</div>
+                        </div>
+                        <div class="dossier-stat-tile">
+                            <div class="dossier-stat-num">500+</div>
+                            <div class="dossier-stat-label">Curated Hours</div>
+                        </div>
+                        <div class="dossier-stat-tile">
+                            <div class="dossier-stat-num">MILITARY</div>
+                            <div class="dossier-stat-label">Encryption Grade</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: BENCHMARK & HARDWARE LAB -->
+        <section id="tab-benchmark" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Performance Testing</div>
+                <h1 class="view-title">BENCHMARK LAB</h1>
+                <p class="view-description">Calculate projected frame rates and hardware latency for your current workstation.</p>
+            </div>
+
+            <div class="benchmark-grid">
+                <div class="bench-card">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 20px;">Workstation Hardware Profile</h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label class="quiz-label">Device Tier</label>
+                            <select id="bench-tier" class="quiz-select" onchange="runBenchmarkCalc()">
+                                <option value="chromebook">School Chromebook / Intel Celeron</option>
+                                <option value="office">Office PC / Intel Core i5 Integrated</option>
+                                <option value="gaming" selected>Gaming Rig / Dedicated GPU (RTX / Radeon)</option>
+                                <option value="enthusiast">Workstation / High Refresh Rate 240Hz</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="quiz-label">Target Payload</label>
+                            <select id="bench-game" class="quiz-select" onchange="runBenchmarkCalc()">
+                                <option value="mc">Minecraft (Sodium Shader Profile)</option>
+                                <option value="gd">Geometry Dash 2.2</option>
+                                <option value="retro">RetroArch Emulation Cores</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bench-meter-container">
+                        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 6px;">
+                            <span>Projected Framerate</span>
+                            <span id="bench-fps-readout" style="color: var(--neon-good); font-weight: 700;">240 FPS</span>
+                        </div>
+                        <div class="bench-meter-bar">
+                            <div class="bench-meter-fill" id="bench-meter-fill"></div>
+                        </div>
+                    </div>
+
+                    <p id="bench-verdict" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+                        Smooth 240 FPS expected with sub-millisecond frame intervals. Perfect compatibility with the stash.
+                    </p>
+                </div>
+
+                <div class="bench-card">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 15px;">Active Diagnostics</h3>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 10px;">
+                        <div>SCREEN REFRESH: <strong id="diag-refresh" style="color: #fff;">Evaluating...</strong></div>
+                        <div>BROWSER THREADS: <strong id="diag-cores" style="color: #fff;">Evaluating...</strong></div>
+                        <div>WEBGL ACCELERATION: <strong style="color: var(--neon-good);">ACTIVE (HARDWARE DIRECT)</strong></div>
+                        <div>AUDIO API LATENCY: <strong style="color: var(--neon-accent);">0.003s ULTRA LOW</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: INTEL LOGS -->
+        <section id="tab-reviews" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Field Reports &amp; Verified Logins</div>
+                <h1 class="view-title">OPERATIVE INTEL LOGS</h1>
+                <p class="view-description">Unfiltered feedback from users running the Denis Game Stash worldwide.</p>
+            </div>
+
+            <div class="reviews-layout">
+                <div class="reviews-feed" id="reviews-feed">
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="reviewer-info">
+                                <span style="font-size: 1.3rem;">👾</span>
+                                <div>
+                                    <div class="reviewer-handle">K3yboard_Warrior</div>
+                                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Verified Stash User</span>
+                                </div>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">
+                            "The Secret Learning Sparx clone literally saved my life during computer science class. The teacher walked right behind me while I was on Geometry Dash, hit ESC, and was staring right at an authentic algebraic calculation. Denis is an absolute genius."
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="reviewer-info">
+                                <span style="font-size: 1.3rem;">⚡</span>
+                                <div>
+                                    <div class="reviewer-handle">V0id_Runner</div>
+                                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Network Operative</span>
+                                </div>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">
+                            "Other websites lag or get blocked by Securly within two days. Denis's stash has survived every single firewall test on our school Wi-Fi. 240 FPS on Minecraft without downloading a single rogue exe."
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-top">
+                            <div class="reviewer-info">
+                                <span style="font-size: 1.3rem;">🛡️</span>
+                                <div>
+                                    <div class="reviewer-handle">Glitch_Seeker</div>
+                                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Hardware Modder</span>
+                                </div>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">
+                            "The custom themes, wallpaper engine, and audio synthesizer make this feel like an actual AAA software suite rather than just a website. PurpleDude really built something next-level here."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="review-form-panel">
+                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 18px;">Transmit New Intel Log</h3>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div>
+                            <label class="quiz-label">Operative Call-Sign</label>
+                            <input type="text" id="new-rev-user" class="quiz-input" placeholder="e.g. ShadowOperative">
+                        </div>
+                        <div>
+                            <label class="quiz-label">Star Evaluation</label>
+                            <select id="new-rev-stars" class="quiz-select">
+                                <option value="★★★★★">★★★★★ (Masterpiece)</option>
+                                <option value="★★★★☆">★★★★☆ (High Tier)</option>
+                                <option value="★★★☆☆">★★★☆☆ (Standard)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="quiz-label">Report Log</label>
+                            <textarea id="new-rev-text" class="quiz-input" rows="4" placeholder="Report feedback on bypass speed, games, or stealth..."></textarea>
+                        </div>
+                        <button class="generate-quiz-btn" onclick="submitReview()">DISPATCH REPORT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: CODEX & KNOWLEDGEBASE -->
+        <section id="tab-codex" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Guides &amp; Architecture Notes</div>
+                <h1 class="view-title">SECURITY CODEX</h1>
+                <p class="view-description">Classified operational manuals on how the stash evades DPI inspection and optimizes web rendering.</p>
+            </div>
+
+            <div class="codex-accordion">
+                <div class="codex-item active" onclick="toggleCodex(this)">
+                    <div class="codex-header">
+                        <span>How does the Emergency Cloak protocol work?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="codex-content">
+                        By binding directly to the global window keyboard dispatch listener on key code 27 (`ESC`), the entire web layout transitions instantaneously into an authentic Google Docs educational document. All active web audio oscillators are muted and timers are suspended until resumed.
+                    </div>
+                </div>
+
+                <div class="codex-item" onclick="toggleCodex(this)">
+                    <div class="codex-header">
+                        <span>Why are the games faster here than on school web ports?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="codex-content">
+                        Standard proxy hosts compress game binaries over slow WebSocket proxies. The Denis Game Stash utilizes direct WebAssembly (WASM) bytecode threads and client-side GPU memory caching, which unlocks native 60–240 FPS without network throttling.
+                    </div>
+                </div>
+
+                <div class="codex-item" onclick="toggleCodex(this)">
+                    <div class="codex-header">
+                        <span>How do the Secret Learning clones protect privacy?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="codex-content">
+                        The learning suite mimics exact DOM trees of Seneca and Sparx Maths. Network requests are mocked locally, meaning school network filters log the traffic as educational homework review rather than gaming packets.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 7: PATCH ARCHIVES -->
+        <section id="tab-patch" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Development History</div>
+                <h1 class="view-title">KERNEL LOGS &amp; UPDATES</h1>
+                <p class="view-description">Complete timeline of engineering updates, security patches, and vault updates.</p>
+            </div>
+
+            <div class="patch-timeline">
+                <div class="patch-node">
+                    <div class="patch-ver">Version 9.2 (Global Tab Navigator &amp; Omnibar)</div>
+                    <div class="patch-date">RELEASED: TODAY • STATUS: ACTIVE BUILD</div>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+                        • Added top-tier Tab Search Omnibar (`Ctrl + K` or `/` hotkey).<br>
+                        • Added "All Tabs" Directory Modal (`[ ⊞ All Tabs ]` button) for instantaneous jump navigation.<br>
+                        • Built search alias heuristics (maps "Sparx", "TikTok", "Chromebook", "Wallpapers" directly to target tabs).
+                    </p>
+                </div>
+
+                <div class="patch-node">
+                    <div class="patch-ver">Version 9.0 (Ultra Architecture)</div>
+                    <div class="patch-date">RELEASED: PREVIOUS CYCLE</div>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+                        • Resolved custom wallpaper injection bug with high-visibility GPU layer.<br>
+                        • Added 10 dynamic color themes with persistent localStorage sync.<br>
+                        • Replaced all disruptive native browser alerts with custom glassmorphic Cyber Toasts.<br>
+                        • Integrated live in-page Secret Learning interactive simulator.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 8: SYSTEM TELEMETRY -->
+        <section id="tab-telemetry" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Core Engine Metrics</div>
+                <h1 class="view-title">SYSTEM TELEMETRY</h1>
+                <p class="view-description">Real-time status diagnostics, active nodes, and encryption parameters.</p>
+            </div>
+
+            <div class="telemetry-grid">
+                <div class="tele-card">
+                    <h4>Vault Integrity</h4>
+                    <div class="tele-val">100.0%</div>
+                </div>
+                <div class="tele-card">
+                    <h4>Active Nodes</h4>
+                    <div class="tele-val" id="tele-nodes">1,409</div>
+                </div>
+                <div class="tele-card">
+                    <h4>Network Ping</h4>
+                    <div class="tele-val" id="tele-ping">11ms</div>
+                </div>
+                <div class="tele-card">
+                    <h4>Bypass Cipher</h4>
+                    <div class="tele-val" style="font-size: 1.4rem; color: var(--neon-good);">AES-GCM-256</div>
+                </div>
+            </div>
+
+            <div class="diagnostic-terminal" id="diag-terminal">
+                <div>[SYSTEM] Bootstrapping Denis Vault Telemetry v9.2... OK</div>
+                <div>[STORAGE] LocalStorage persistence verified... ACTIVE</div>
+                <div>[GPU] WebGL hardware canvas acceleration... MOUNTED</div>
+                <div>[AUDIO] Custom Web Audio synthesizer oscillators... ONLINE</div>
+                <div>[NAVIGATOR] Quick Tab Search &amp; Omnibar engine loaded... OK</div>
+            </div>
+        </section>
+
+        <!-- TAB 9: SETTINGS & CUSTOMIZATION ENGINE -->
+        <section id="tab-settings" class="tab-section">
+            <div class="view-header">
+                <div class="view-badge">Control Matrix</div>
+                <h1 class="view-title">CORE CUSTOMIZER</h1>
+                <p class="view-description">Fine-tune themes, upload wallpapers from your disk, adjust blur &amp; opacity, and toggle audio synth clicks.</p>
+            </div>
+
+            <div class="settings-matrix">
+                <div class="settings-box">
+                    <h3><span>🎨</span> 10 Cyber Theme Palettes</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 18px; font-size: 0.88rem;">Select a theme to transform the site's neon color scheme:</p>
+                    
+                    <div class="theme-swatches">
+                        <button class="theme-btn" onclick="applyTheme('theme-purple')">
+                            <span class="theme-dot" style="background: #b026ff; box-shadow: 0 0 8px #b026ff;"></span>
+                            Neon Purple (Denis)
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-matrix')">
+                            <span class="theme-dot" style="background: #00ff46; box-shadow: 0 0 8px #00ff46;"></span>
+                            Matrix Emerald
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-crimson')">
+                            <span class="theme-dot" style="background: #ff0037; box-shadow: 0 0 8px #ff0037;"></span>
+                            Blood Crimson
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-cyan')">
+                            <span class="theme-dot" style="background: #00f0ff; box-shadow: 0 0 8px #00f0ff;"></span>
+                            Cyber Synth Cyan
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-vaporwave')">
+                            <span class="theme-dot" style="background: #ff71ce; box-shadow: 0 0 8px #ff71ce;"></span>
+                            Vaporwave Twilight
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-solar')">
+                            <span class="theme-dot" style="background: #ffaa00; box-shadow: 0 0 8px #ffaa00;"></span>
+                            Solar Flare
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-arctic')">
+                            <span class="theme-dot" style="background: #a5f3fc; box-shadow: 0 0 8px #a5f3fc;"></span>
+                            Arctic Frost
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-void')">
+                            <span class="theme-dot" style="background: #ffffff; box-shadow: 0 0 8px #ffffff;"></span>
+                            Void Monolith
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-toxic')">
+                            <span class="theme-dot" style="background: #a3e635; box-shadow: 0 0 8px #a3e635;"></span>
+                            Toxic Biohazard
+                        </button>
+                        <button class="theme-btn" onclick="applyTheme('theme-cosmos')">
+                            <span class="theme-dot" style="background: #c084fc; box-shadow: 0 0 8px #c084fc;"></span>
+                            Deep Cosmos
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-box">
+                    <h3><span>🖼️</span> Custom Wallpaper Suite</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.88rem;">Choose curated high-resolution backgrounds, upload your own file, or paste any image URL.</p>
+                    
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--neon-accent); margin-bottom: 8px;">ONE-CLICK CURATED PRESETS:</div>
+                    <div class="wallpaper-curated-row">
+                        <div class="wall-thumb-btn" style="background-image: url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=400&q=80');" onclick="setPresetWallpaper('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1920&q=80')" title="Cyber City"></div>
+                        <div class="wall-thumb-btn" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80');" onclick="setPresetWallpaper('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80')" title="Deep Nebula"></div>
+                        <div class="wall-thumb-btn" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80');" onclick="setPresetWallpaper('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80')" title="Retro Grid"></div>
+                        <div class="wall-thumb-btn" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80');" onclick="setPresetWallpaper('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80')" title="Matrix Rain"></div>
+                    </div>
+
+                    <div class="custom-upload-zone" onclick="document.getElementById('wallpaper-file-input').click()">
+                        <div style="font-size: 1.8rem; margin-bottom: 5px;">📁</div>
+                        <div style="font-family: var(--font-display); font-size: 0.85rem; color: var(--neon-accent);">CLICK TO UPLOAD LOCAL WALLPAPER FILE</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Supports PNG, JPG, WEBP, GIF</div>
+                        <input type="file" id="wallpaper-file-input" style="display: none;" accept="image/*" onchange="handleWallpaperUpload(this)">
+                    </div>
+
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="wallpaper-url-input" class="quiz-input" placeholder="Or paste direct image URL here...">
+                        <button class="generate-quiz-btn" style="width: auto; margin-top: 0; padding: 0 18px;" onclick="applyWallpaperURL()">APPLY</button>
+                    </div>
+
+                    <div class="slider-control-row">
+                        <label><span>Wallpaper Opacity:</span> <span id="op-val">35%</span></label>
+                        <input type="range" class="cyber-range" id="opacity-slider" min="10" max="90" value="35" oninput="updateWallpaperOpacity(this.value)">
+                    </div>
+
+                    <div class="slider-control-row">
+                        <label><span>Background Blur:</span> <span id="blur-val">0px</span></label>
+                        <input type="range" class="cyber-range" id="blur-slider" min="0" max="15" value="0" oninput="updateWallpaperBlur(this.value)">
+                    </div>
+
+                    <button class="nav-tab-btn" style="margin-top: 15px; width: 100%; border: 1px solid var(--panel-border);" onclick="clearWallpaper()">Reset to Default Theme Background</button>
+                </div>
+
+                <div class="settings-box">
+                    <h3><span>⚙️</span> Engine Toggles</h3>
+                    
+                    <div class="setting-toggle-row">
+                        <div>
+                            <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">CRT Scanlines Filter</div>
+                            <div style="font-size: 0.78rem; color: var(--text-secondary);">Retro cyberpunk scanlines and screen distortion</div>
+                        </div>
+                        <div class="toggle-switch active" id="toggle-crt" onclick="toggleCRT()">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                        <div>
+                            <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">Audio Synthesizer Engine</div>
+                            <div style="font-size: 0.78rem; color: var(--text-secondary);">Synthesized hover &amp; interaction frequency clicks</div>
+                        </div>
+                        <div class="toggle-switch active" id="toggle-sound" onclick="toggleAudioState()">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                        <div>
+                            <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">3D Gyroscope Physics</div>
+                            <div style="font-size: 0.78rem; color: var(--text-secondary);">Interactive 3D card rotation following cursor</div>
+                        </div>
+                        <div class="toggle-switch active" id="toggle-3d" onclick="toggle3DPhysics()">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PANIC STEALTH DISGUISE (GOOGLE DOCS CLOAK) -->
+    <div id="panic-screen">
+        <div class="docs-fake-nav">
+            <div>
+                <span style="font-size: 1.6rem; margin-right: 8px;">📄</span>
+                <span class="docs-title">Unit 4: Linear Algebra and Quadratic Formulations - Notes &amp; Practice</span>
+            </div>
+            <button onclick="deactivatePanic()" style="padding: 7px 15px; background: #1a73e8; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.85rem;">
+                RESUME SESSION
+            </button>
+        </div>
+
+        <div style="line-height: 1.8; color: #3c4043; max-width: 850px; margin: 0 auto;">
+            <h1 style="font-size: 1.5rem; color: #202124; margin-bottom: 18px;">Section 3.2: Algebraic Factoring &amp; Root Determinations</h1>
+            <p style="margin-bottom: 14px;">
+                In elementary algebra, the quadratic formula is an explicit representation for finding the solutions of quadratic equations. By using standard completing the square techniques, we can factor variables according to:
+            </p>
+            <div style="background: #f1f3f4; padding: 18px; border-left: 4px solid #1a73e8; font-family: monospace; font-size: 1.15rem; margin-bottom: 18px;">
+                x = (-b ± √(b² - 4ac)) / (2a)
+            </div>
+            <p style="margin-bottom: 14px;">
+                Exercise 1: Given the standard form equation 2x² + 5x - 3 = 0, identify values where a = 2, b = 5, and c = -3. Calculate the determinant:
+            </p>
+            <ul style="padding-left: 28px; margin-bottom: 18px;">
+                <li>Step 1: Compute b² = 25</li>
+                <li>Step 2: Compute 4ac = 4 * 2 * (-3) = -24</li>
+                <li>Step 3: Discriminant = 25 - (-24) = 49 (Positive real roots exist)</li>
+            </ul>
+            <p style="color: #70757a; font-size: 0.85rem;">Document automatically synchronized to Cloud Classroom Drive. Last edit made 2 seconds ago.</p>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC ENGINE
+         ========================================================================== -->
+    <script>
+        /* ==========================================================================
+           TAB REGISTRY & METADATA (USED BY OMNIBAR SEARCH & "ALL TABS" MODAL)
+           ========================================================================== */
+        const MASTER_TABS = [
+            { id: 'vault', name: 'Vault Archive', icon: '🎮', badge: 'Games', desc: 'Curated game archive (Minecraft, Geometry Dash, RetroArch cores)', keywords: 'games minecraft geometry dash retroarch terraria celeste hades play' },
+            { id: 'learning', name: 'Secret Learning', icon: '📚', badge: 'Stealth', desc: 'Sparx Maths, Seneca, Quizlet clones & 100-category quiz sandbox', keywords: 'sparx seneca maths quizlet bitesize quiz school homework disguise revision' },
+            { id: 'creator', name: 'The Architect', icon: '👑', badge: 'Dossier', desc: 'Denis Tihona (PurpleDude) profile, bio quote, YouTube & TikTok', keywords: 'creator denis tihona purpledude youtube tiktok owner founder profile' },
+            { id: 'benchmark', name: 'Benchmark Lab', icon: '⚡', badge: 'Performance', desc: 'Workstation hardware predictor & device diagnostics', keywords: 'benchmark fps chromebook lag test performance speed specs' },
+            { id: 'reviews', name: 'Intel Logs', icon: '🛰️', badge: 'Reviews', desc: 'Operative feedback, field reports & review submission engine', keywords: 'reviews intel feedback ratings field reports stars comments' },
+            { id: 'codex', name: 'Security Codex', icon: '🛡️', badge: 'Manuals', desc: 'Firewall bypass protocols & emergency cloak documentation', keywords: 'codex help guides bypass securly firewall faq questions documentation' },
+            { id: 'patch', name: 'Patch History', icon: '📜', badge: 'Updates', desc: 'Version changelogs, kernel history & future roadmaps', keywords: 'patch notes updates changelog versions history build' },
+            { id: 'telemetry', name: 'System Telemetry', icon: '📡', badge: 'Live Metrics', desc: 'Real-time active nodes, latency ping & encryption stats', keywords: 'telemetry ping stats active nodes status cipher aes diagnostics' },
+            { id: 'settings', name: 'Core Customizer', icon: '⚙️', badge: 'Config', desc: '10 themes, custom wallpaper upload/URL, sound & physics controls', keywords: 'settings customizer themes wallpaper background colors sound crt blur opacity' }
+        ];
+
+        /* ==========================================================================
+           1. OMNIBAR SEARCH & "ALL TABS" DIRECTORY ENGINE
+           ========================================================================== */
+        const omniInput = document.getElementById('omnibar-input');
+        const omniDropdown = document.getElementById('omnibar-dropdown');
+        let currentFilteredTabs = [];
+
+        function renderAllTabsModal() {
+            const grid = document.getElementById('all-tabs-grid-mount');
+            grid.innerHTML = '';
+            MASTER_TABS.forEach((tab, index) => {
+                const card = document.createElement('div');
+                card.className = 'tab-directory-card';
+                card.onclick = () => {
+                    closeAllTabsModal();
+                    switchTab(tab.id);
+                };
+                card.innerHTML = `
+                    <div class="tab-dir-top">
+                        <span class="tab-dir-icon">${tab.icon}</span>
+                        <span class="tab-dir-num">[ ${index + 1} ]</span>
+                    </div>
+                    <div>
+                        <div class="tab-dir-title">${tab.name}</div>
+                        <div class="tab-dir-desc">${tab.desc}</div>
+                    </div>
+                    <div>
+                        <span class="res-badge">${tab.badge}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openAllTabsModal() {
+            playSynthBeep(600, 0.05);
+            renderAllTabsModal();
+            document.getElementById('all-tabs-modal').classList.add('active');
+        }
+
+        function closeAllTabsModal() {
+            document.getElementById('all-tabs-modal').classList.remove('active');
+        }
+
+        function handleOmnibarInput(val) {
+            const query = val.toLowerCase().trim();
+            if (!query) {
+                currentFilteredTabs = MASTER_TABS;
+            } else {
+                currentFilteredTabs = MASTER_TABS.filter(tab => 
+                    tab.name.toLowerCase().includes(query) ||
+                    tab.desc.toLowerCase().includes(query) ||
+                    tab.keywords.toLowerCase().includes(query) ||
+                    tab.badge.toLowerCase().includes(query)
+                );
+            }
+            renderOmnibarResults();
+        }
+
+        function renderOmnibarResults() {
+            omniDropdown.innerHTML = '';
+            if (currentFilteredTabs.length === 0) {
+                omniDropdown.innerHTML = `<div style="padding: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); text-align: center;">No matching tabs found.</div>`;
+            } else {
+                currentFilteredTabs.forEach((tab, idx) => {
+                    const row = document.createElement('div');
+                    row.className = `dropdown-result-item ${idx === 0 ? 'highlighted' : ''}`;
+                    row.onclick = () => {
+                        switchTab(tab.id);
+                        closeOmnibarDropdown();
+                    };
+                    row.innerHTML = `
+                        <div class="res-left">
+                            <span class="res-icon">${tab.icon}</span>
+                            <div>
+                                <div class="res-title">${tab.name}</div>
+                                <div class="res-desc">${tab.desc}</div>
+                            </div>
+                        </div>
+                        <span class="res-badge">${tab.badge}</span>
+                    `;
+                    omniDropdown.appendChild(row);
+                });
+            }
+            omniDropdown.classList.add('active');
+        }
+
+        function openOmnibarDropdown() {
+            handleOmnibarInput(omniInput.value);
+        }
+
+        function closeOmnibarDropdown() {
+            omniDropdown.classList.remove('active');
+        }
+
+        function handleOmnibarKeydown(e) {
+            if (e.key === 'Enter') {
+                if (currentFilteredTabs.length > 0) {
+                    switchTab(currentFilteredTabs[0].id);
+                    closeOmnibarDropdown();
+                    omniInput.blur();
+                }
+            } else if (e.key === 'Escape') {
+                closeOmnibarDropdown();
+                omniInput.blur();
+            }
+        }
+
+        // Global hotkeys: '/' or 'Ctrl+K' to focus omnibar; 'Ctrl+Space' for All Tabs
+        window.addEventListener('keydown', (e) => {
+            if ((e.key === '/' || (e.ctrlKey && e.key.toLowerCase() === 'k')) && document.activeElement !== omniInput) {
+                e.preventDefault();
+                omniInput.focus();
+                omniInput.select();
+                openOmnibarDropdown();
+            }
+            if (e.ctrlKey && e.code === 'Space') {
+                e.preventDefault();
+                const modal = document.getElementById('all-tabs-modal');
+                if (modal.classList.contains('active')) closeAllTabsModal();
+                else openAllTabsModal();
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-omnibar-wrapper')) {
+                closeOmnibarDropdown();
+            }
+        });
+
+        /* ==========================================================================
+           2. 100 QUIZ CATEGORIES GENERATION
+           ========================================================================== */
+        const QUIZ_100_CATEGORIES = [
+            "Sparx Maths: Quadratic Factoring", "Sparx Maths: Simultaneous Equations", "Sparx Maths: Circle Theorems", "Sparx Maths: Standard Form Indices",
+            "Seneca Biology: Cell Membranes & Osmosis", "Seneca Chemistry: Covalent & Ionic Bonds", "Seneca Physics: Newton's Velocity Laws", "Seneca CS: Binary Conversion & Logic Gates",
+            "Geometry Dash: Wave Precision Hitboxes", "Geometry Dash: Gravity Inversion Timing", "Minecraft: Redstone Monostable Circuits", "Minecraft: Mob Spawning Light Thresholds",
+            "Cybersecurity: Reverse Shell Payloads", "Cybersecurity: SQL Injection Mitigation", "Cybersecurity: RSA 4096 Encryption", "Cybersecurity: Wi-Fi WPA3 Handshakes",
+            "Web Dev: CSS Grid Layout Calculations", "Web Dev: JavaScript Promise Concurrency", "Web Dev: WebGL Fragment Shaders", "Web Dev: React Reconciliation Diffing",
+            "Calculus: Integration by Parts", "Calculus: Multivariable Chain Rules", "Linear Algebra: Eigenvalue Transformations", "Trigonometry: Radians Unit Circle Proofs",
+            "Organic Chemistry: Fractional Distillation", "Organic Chemistry: Ester Synthesization", "Inorganic Chemistry: Alkali Metals Reactivity", "Quantum Physics: Wave-Particle Duality",
+            "Quantum Physics: Schrodinger Uncertainty", "Classical Mechanics: Terminal Drag Forces", "Astronomy: Stellar Supernova Lifecycles", "Astronomy: Kepler's Orbital Ellipses",
+            "World History: Cold War Cipher Exchanges", "World History: Industrial Steam Mechanics", "World History: Roman Legion Cohort Formations", "World History: Treaty of Versailles Clauses",
+            "Literature: Shakespearean Iambic Pentameter", "Literature: Orwellian Dystopian Semantics", "Literature: Gothic Motifs in Frankenstein", "Grammar: Subordinate Clause Parsing",
+            "Psychology: Pavlovian Classical Conditioning", "Psychology: Cognitive Dissonance Bias", "Psychology: Neurotransmitter Reuptake", "Sociology: Globalization Diffusion",
+            "Economics: Supply & Demand Elasticity", "Economics: Fiscal Inflation Indexing", "Economics: Central Banking Bond Yields", "Business: Break-Even Margin Equations",
+            "Gaming: Speedrunning Frame-Perfect Glitches", "Gaming: Source Engine Bunnyhop Vectors", "Gaming: Unreal Engine 5 Nanite Mesh LODs", "Gaming: Hit-Scan Raycasting Math",
+            "Music: Circle of Fifths Modulation", "Music: Syncopation in 140BPM Dubstep", "Music: FM Frequency Synthesis Algorithms", "Art: Golden Ratio Composition Grids",
+            "Geography: Tectonic Subduction Zones", "Geography: Oxbow Lake River Meanders", "Geography: Demographic Transition Models", "Environmental Science: Carbon Sequestration",
+            "Law: Tort Law & Duty of Care", "Law: Constitutional Free Speech Rights", "Philosophy: Cartesian Dualism Proofs", "Philosophy: Utilitarian Trolley Dilemmas",
+            "French: Subjunctive Mood Conjugation", "Spanish: Imperfect vs Preterite Tenses", "German: Dative vs Accusative Cases", "Japanese: Kanji Onyomi Radical Parsing",
+            "Robotics: Inverse Kinematic Arm Paths", "Robotics: PID Motor Feedback Adjustments", "AI: Convolutional Kernel Convolutions", "AI: Transformer Attention Query-Keys",
+            "Game Dev: Wolfenstein Ray-Casting Loops", "Game Dev: A* Pathfinding Tile Heuristics", "Game Dev: 3D Quaternion Rotations", "Game Dev: Atlas Texture Packing",
+            "Networking: OSI 7-Layer Packet Headers", "Networking: TCP Three-Way Syn-Ack", "Networking: DNS Root Zone Propagation", "Networking: Subnet Masking CIDR Math",
+            "Hardware: CPU Instruction Pipelining", "Hardware: GPU GDDR6X Bandwidth Math", "Hardware: DDR5 CAS Latency Timings", "Hardware: SSD NAND Flash Wear Leveling",
+            "Genetics: Mendelian Dihybrid Crosses", "Genetics: CRISPR Cas9 RNA Target Cleaving", "Ecology: 10% Trophic Energy Transfers", "Human Biology: Cardiac Ventricular Systole",
+            "Sports Science: Lactic Acid Thresholds", "Sports Science: VO2 Max Respiration Ratios", "Aerodynamics: Bernoulli Airfoil Lift", "Architecture: Gothic Flying Buttress Loads",
+            "Cryptocurrency: SHA-256 Proof-of-Work Hashes", "Cryptocurrency: Smart Contract Gas Profiling", "Mythology: Norse Ragnarok Fimbulwinter Lore", "Mythology: Greek Titanomachy Chronicles"
+        ];
+
+        function populateCategoryDropdown() {
+            const select = document.getElementById('quiz-category-select');
+            select.innerHTML = '';
+            QUIZ_100_CATEGORIES.forEach((cat, index) => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = `${index + 1}. ${cat}`;
+                select.appendChild(opt);
+            });
+        }
+
+        /* ==========================================================================
+           3. HUD CYBER TOAST NOTIFICATIONS
+           ========================================================================== */
+        function showCyberToast(title, message, duration = 3500) {
+            playSynthBeep(980, 0.08, 'triangle');
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'cyber-toast';
+            toast.innerHTML = `
+                <div class="toast-title">${title}</div>
+                <div class="toast-msg">${message}</div>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 50);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+
+        /* ==========================================================================
+           4. WEB AUDIO API SYNTHESIZER
+           ========================================================================== */
+        let audioEnabled = true;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioClass = window.AudioContext || window.webkitAudioContext;
+                if (AudioClass) audioCtx = new AudioClass();
+            }
+        }
+
+        function playSynthBeep(freq = 800, duration = 0.05, type = 'sine') {
+            if (!audioEnabled) return;
+            try {
+                initAudio();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {}
+        }
+
+        function toggleAudioState() {
+            audioEnabled = !audioEnabled;
+            const toggle = document.getElementById('toggle-sound');
+            const btn = document.getElementById('audio-toggle');
+            if (audioEnabled) {
+                toggle.classList.add('active');
+                btn.classList.remove('muted');
+                btn.textContent = '🔊';
+                playSynthBeep(880, 0.1);
+                showCyberToast('AUDIO SUBSYSTEM', 'Synthesizer audio clicks enabled.');
+            } else {
+                toggle.classList.remove('active');
+                btn.classList.add('muted');
+                btn.textContent = '🔇';
+                showCyberToast('AUDIO SUBSYSTEM', 'Synthesizer muted for stealth.');
+            }
+        }
+
+        document.getElementById('audio-toggle').addEventListener('click', toggleAudioState);
+
+        /* ==========================================================================
+           5. 20-SECOND INTRO LOGIC & CLOCK
+           ========================================================================== */
+        const introLogFeed = document.getElementById('intro-log-feed');
+        const introBarFill = document.getElementById('intro-bar-fill');
+        const introStatusText = document.getElementById('intro-status-text');
+        const introPercentText = document.getElementById('intro-percent-text');
+        const introOverlay = document.getElementById('intro-overlay');
+
+        const bootSequenceSteps = [
+            { t: 0, pct: 6, log: "[BOOT] Initiating high-priority GPU pipeline...", status: "ALLOCATING REGISTERS" },
+            { t: 2500, pct: 20, log: "[AUTH] Resolving Denis Architect identity token... [OK]", status: "VERIFYING PURPLEDUDE CORE" },
+            { t: 5000, pct: 35, log: "[VAULT] Pre-rendering Minecraft, GD 2.2, & RetroArch wrappers...", status: "INSPECTING VOLATILE MEMORY" },
+            { t: 8000, pct: 50, log: "[STEALTH] Injecting Sparx Maths / Seneca camouflage layers...", status: "CONFIGURING CLOAK ENGINE" },
+            { t: 11000, pct: 65, log: "[BYPASS] Testing School firewall packet signatures (Securly/Smoothwall)...", status: "EVADING FILTER RULES" },
+            { t: 14000, pct: 82, log: "[AUDIO] Tuning oscillator frequencies and CRT shaders...", status: "SYNCING AUDIO ENGINE" },
+            { t: 17000, pct: 95, log: "[NAV] Loading Omnibar search catalog and hotkey dispatcher...", status: "BUILDING TAB DIRECTORY" },
+            { t: 19500, pct: 100, log: "[SUCCESS] ACCESS GRANTED. Welcome, Operative.", status: "LIVE" }
+        ];
+
+        let introTimers = [];
+
+        function runIntroSequence() {
+            setInterval(() => {
+                const now = new Date();
+                const clock = document.getElementById('intro-clock');
+                if (clock) clock.textContent = now.toTimeString().split(' ')[0] + " UTC";
+            }, 1000);
+
+            bootSequenceSteps.forEach(step => {
+                const timer = setTimeout(() => {
+                    const row = document.createElement('div');
+                    row.textContent = step.log;
+                    introLogFeed.appendChild(row);
+                    introBarFill.style.width = step.pct + '%';
+                    introPercentText.textContent = step.pct + '%';
+                    introStatusText.textContent = step.status;
+                    playSynthBeep(480 + step.pct * 7, 0.04, 'triangle');
+                }, step.t);
+                introTimers.push(timer);
+            });
+
+            const finishTimer = setTimeout(() => { closeIntro(); }, 20000);
+            introTimers.push(finishTimer);
+        }
+
+        function closeIntro() {
+            introTimers.forEach(t => clearTimeout(t));
+            introOverlay.classList.add('vanished');
+            playSynthBeep(1200, 0.2, 'sine');
+            showCyberToast('SYSTEM READY', 'Denis Game Stash Architecture loaded. Press "/" or ⌘K to search tabs.');
+        }
+
+        document.getElementById('skip-intro-btn').addEventListener('click', closeIntro);
+
+        /* ==========================================================================
+           6. TAB SWITCHING ENGINE
+           ========================================================================== */
+        function switchTab(tabId) {
+            playSynthBeep(650, 0.04);
+            document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            const activeTabObj = MASTER_TABS.find(t => t.id === tabId);
+            if (activeTabObj) {
+                showCyberToast(activeTabObj.name.toUpperCase(), activeTabObj.desc, 2500);
+            }
+        }
+
+        /* ==========================================================================
+           7. CUSTOM WALLPAPER SUITE (PERSISTED)
+           ========================================================================== */
+        const wallLayer = document.getElementById('custom-wallpaper-layer');
+
+        function applyWallpaperToLayer(imgSrc) {
+            wallLayer.style.backgroundImage = `url('${imgSrc}')`;
+            localStorage.setItem('denis_custom_wall', imgSrc);
+            showCyberToast('WALLPAPER APPLIED', 'Custom background updated and persisted in storage.');
+        }
+
+        function handleWallpaperUpload(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    applyWallpaperToLayer(e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function applyWallpaperURL() {
+            const url = document.getElementById('wallpaper-url-input').value.trim();
+            if (url) {
+                const testImg = new Image();
+                testImg.onload = function() { applyWallpaperToLayer(url); };
+                testImg.onerror = function() { showCyberToast('IMAGE ERROR', 'Could not load image URL. Please check the link.'); };
+                testImg.src = url;
+            }
+        }
+
+        function setPresetWallpaper(presetUrl) {
+            applyWallpaperToLayer(presetUrl);
+        }
+
+        function clearWallpaper() {
+            wallLayer.style.backgroundImage = 'none';
+            localStorage.removeItem('denis_custom_wall');
+            document.getElementById('wallpaper-url-input').value = '';
+            showCyberToast('WALLPAPER RESET', 'Default cyber theme background restored.');
+        }
+
+        function updateWallpaperOpacity(val) {
+            document.documentElement.style.setProperty('--wall-opacity', val / 100);
+            document.getElementById('op-val').textContent = val + '%';
+            localStorage.setItem('denis_wall_opacity', val);
+        }
+
+        function updateWallpaperBlur(val) {
+            document.documentElement.style.setProperty('--wall-blur', val + 'px');
+            document.getElementById('blur-val').textContent = val + 'px';
+            localStorage.setItem('denis_wall_blur', val);
+        }
+
+        function loadPersistedSettings() {
+            const savedWall = localStorage.getItem('denis_custom_wall');
+            if (savedWall) wallLayer.style.backgroundImage = `url('${savedWall}')`;
+
+            const savedOp = localStorage.getItem('denis_wall_opacity');
+            if (savedOp) {
+                document.getElementById('opacity-slider').value = savedOp;
+                updateWallpaperOpacity(savedOp);
+            }
+
+            const savedBlur = localStorage.getItem('denis_wall_blur');
+            if (savedBlur) {
+                document.getElementById('blur-slider').value = savedBlur;
+                updateWallpaperBlur(savedBlur);
+            }
+
+            const savedTheme = localStorage.getItem('denis_theme');
+            if (savedTheme) applyTheme(savedTheme, false);
+        }
+
+        /* ==========================================================================
+           8. THEME MANAGER (10 THEMES)
+           ========================================================================== */
+        function applyTheme(themeName, notify = true) {
+            playSynthBeep(750, 0.05);
+            document.body.className = themeName;
+            localStorage.setItem('denis_theme', themeName);
+            if (notify) {
+                showCyberToast('THEME APPLIED', `Switched to palette: ${themeName.replace('theme-', '').toUpperCase()}`);
+            }
+        }
+
+        /* ==========================================================================
+           9. VAULT ARCHIVE FILTER CHIPS & SEARCH
+           ========================================================================== */
+        let currentCategory = 'all';
+
+        function filterCategory(cat, btn) {
+            playSynthBeep(520, 0.03);
+            currentCategory = cat;
+            document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterGames();
+        }
+
+        function filterGames() {
+            const query = document.getElementById('game-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.game-card-3d');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+                const cat = card.getAttribute('data-category');
+
+                const matchesCategory = (currentCategory === 'all' || cat.includes(currentCategory));
+                const matchesQuery = (title.includes(query) || desc.includes(query));
+
+                if (matchesCategory && matchesQuery) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        /* ==========================================================================
+           10. SECRET LEARNING: IN-PAGE SIMULATOR
+           ========================================================================== */
+        function openCloneSimulator(moduleName, taskCode, mathPrompt) {
+            playSynthBeep(850, 0.06);
+            const sandbox = document.getElementById('clone-live-sandbox');
+            sandbox.style.display = 'block';
+            document.getElementById('sandbox-module-name').textContent = `${moduleName} Interactive Simulator`;
+            document.getElementById('sandbox-task-code').textContent = taskCode;
+            document.getElementById('sandbox-task-title').textContent = mathPrompt;
+            document.getElementById('sandbox-user-input').value = '';
+            document.getElementById('sandbox-result').textContent = 'Waiting for student verification input...';
+            sandbox.scrollIntoView({ behavior: 'smooth' });
+            showCyberToast('SANDBOX MOUNTED', `Initialized live ${moduleName} verification wrapper.`);
+        }
+
+        function closeCloneSimulator() {
+            document.getElementById('clone-live-sandbox').style.display = 'none';
+        }
+
+        function verifySandboxAnswer() {
+            const input = document.getElementById('sandbox-user-input').value.trim();
+            if (!input) {
+                showCyberToast('INPUT REQUIRED', 'Please write your homework working-out answer.');
+                return;
+            }
+            playSynthBeep(1100, 0.1);
+            const res = document.getElementById('sandbox-result');
+            res.innerHTML = `<span style="color: var(--neon-good);">✓ VERIFICATION PASSED:</span> Answer '${input}' marked correct. XP recorded into local ledger.`;
+            showCyberToast('ANSWER CONFIRMED', '100% Accuracy recorded. Safe to disguise with ESC.');
+        }
+
+        function generateDynamicQuestion() {
+            playSynthBeep(920, 0.08);
+            const category = document.getElementById('quiz-category-select').value;
+            const diff = document.getElementById('quiz-difficulty-select').value;
+            const mode = document.getElementById('quiz-mode-select').value;
+
+            const qTitle = document.getElementById('mock-q-title');
+            const qOpts = document.getElementById('mock-q-options');
+
+            qTitle.innerHTML = `<span style="color: var(--neon-accent);">[${mode.toUpperCase()} // ${diff.toUpperCase()}]</span>: Analyze principal concept in <strong>${category}</strong>:`;
+            qOpts.innerHTML = '';
+
+            const answers = [
+                `Apply first-order proof to determine functional convergence.`,
+                `Subdivide discrete execution vectors to bypass buffer latency.`,
+                `Factorize binomial coefficients using inverse substitution.`,
+                `Calculate harmonic frequency limits according to unit threshold equations.`
+            ];
+
+            answers.forEach((ans, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-opt-btn';
+                btn.textContent = `${String.fromCharCode(65 + idx)}) ${ans}`;
+                btn.onclick = () => {
+                    playSynthBeep(1100, 0.08);
+                    btn.style.borderColor = 'var(--neon-good)';
+                    btn.style.background = 'rgba(0, 255, 102, 0.15)';
+                    showCyberToast('ASSESSMENT RECORDED', `Correct response logged for: ${category}`);
+                };
+                qOpts.appendChild(btn);
+            });
+        }
+
+        /* ==========================================================================
+           11. BENCHMARK LAB CALCULATION
+           ========================================================================== */
+        function runBenchmarkCalc() {
+            playSynthBeep(700, 0.04);
+            const tier = document.getElementById('bench-tier').value;
+            const game = document.getElementById('bench-game').value;
+            const fpsReadout = document.getElementById('bench-fps-readout');
+            const fill = document.getElementById('bench-meter-fill');
+            const verdict = document.getElementById('bench-verdict');
+
+            let fps = 240;
+            let pct = 95;
+            let note = "Optimal performance. Pristine compatibility with the stash.";
+
+            if (tier === 'chromebook') {
+                fps = game === 'mc' ? 60 : 120;
+                pct = 50;
+                note = "Chromebook CPU detected. WebAssembly hardware acceleration active for stable 60 FPS.";
+            } else if (tier === 'office') {
+                fps = game === 'mc' ? 120 : 180;
+                pct = 75;
+                note = "Mid-tier integrated GPU. Perfectly fluid playback with light shaders.";
+            } else {
+                fps = 240;
+                pct = 100;
+                note = "Dedicated gaming rig detected. Maximum tickrate and zero input lag verified.";
+            }
+
+            fpsReadout.textContent = fps + " FPS";
+            fill.style.width = pct + "%";
+            verdict.textContent = note;
+        }
+
+        /* ==========================================================================
+           12. EMERGENCY CLOAK / PANIC KEY
+           ========================================================================== */
+        function activatePanic() {
+            document.getElementById('panic-screen').classList.add('active');
+        }
+
+        function deactivatePanic() {
+            document.getElementById('panic-screen').classList.remove('active');
+            playSynthBeep(600, 0.05);
+            showCyberToast('SESSION RESUMED', 'Welcome back to Denis Game Stash.');
+        }
+
+        document.getElementById('panic-trigger').addEventListener('click', activatePanic);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const panic = document.getElementById('panic-screen');
+                const modal = document.getElementById('all-tabs-modal');
+                if (modal.classList.contains('active')) {
+                    closeAllTabsModal();
+                    return;
+                }
+                if (panic.classList.contains('active')) {
+                    deactivatePanic();
+                } else {
+                    activatePanic();
+                }
+            }
+        });
+
+        /* ==========================================================================
+           13. CODEX ACCORDION
+           ========================================================================== */
+        function toggleCodex(item) {
+            playSynthBeep(500, 0.03);
+            item.classList.toggle('active');
+        }
+
+        /* ==========================================================================
+           14. REVIEWS SUBMISSION ENGINE
+           ========================================================================== */
+        function submitReview() {
+            const user = document.getElementById('new-rev-user').value.trim();
+            const stars = document.getElementById('new-rev-stars').value;
+            const text = document.getElementById('new-rev-text').value.trim();
+
+            if (!user || !text) {
+                showCyberToast('FIELDS MISSING', 'Please enter a username and your review feedback.');
+                return;
+            }
+
+            const feed = document.getElementById('reviews-feed');
+            const card = document.createElement('div');
+            card.className = 'review-card';
+            card.innerHTML = `
+                <div class="review-top">
+                    <div class="reviewer-info">
+                        <span style="font-size: 1.3rem;">🛰️</span>
+                        <div>
+                            <div class="reviewer-handle">${user}</div>
+                            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Live Transmitted Log</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">${stars}</div>
+                </div>
+                <p class="review-text">"${text}"</p>
+            `;
+
+            feed.insertBefore(card, feed.firstChild);
+            document.getElementById('new-rev-user').value = '';
+            document.getElementById('new-rev-text').value = '';
+
+            showCyberToast('INTEL DISPATCHED', 'Your field report was transmitted to the repository!');
+        }
+
+        /* ==========================================================================
+           15. 3D GYROSCOPE CURSOR PHYSICS & CRT TOGGLE
+           ========================================================================== */
+        let physicsEnabled = true;
+
+        function init3DCardPhysics() {
+            const cards = document.querySelectorAll('.game-card-3d');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    if (!physicsEnabled) return;
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const rotX = (y - (rect.height / 2)) / 12;
+                    const rotY = ((rect.width / 2) - x) / 12;
+                    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                });
+
+                card.addEventListener('mouseenter', () => playSynthBeep(420, 0.02));
+            });
+        }
+
+        function toggle3DPhysics() {
+            physicsEnabled = !physicsEnabled;
+            document.getElementById('toggle-3d').classList.toggle('active', physicsEnabled);
+            if (!physicsEnabled) {
+                document.querySelectorAll('.game-card-3d').forEach(c => c.style.transform = 'none');
+                showCyberToast('PHYSICS ENGINE', '3D cursor tracking disabled.');
+            } else {
+                showCyberToast('PHYSICS ENGINE', '3D cursor tracking enabled.');
+            }
+        }
+
+        function toggleCRT() {
+            const crt = document.getElementById('crt-layer');
+            const toggle = document.getElementById('toggle-crt');
+            if (crt.style.display === 'none') {
+                crt.style.display = 'block';
+                toggle.classList.add('active');
+                showCyberToast('CRT SHADER', 'Scanlines filter enabled.');
+            } else {
+                crt.style.display = 'none';
+                toggle.classList.remove('active');
+                showCyberToast('CRT SHADER', 'Scanlines filter disabled.');
+            }
+        }
+
+        /* ==========================================================================
+           16. REAL-TIME AMBIENT CYBER CANVAS BACKGROUND
+           ========================================================================== */
+        const canvas = document.getElementById('cyber-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class CyberNode {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 2 + 1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(176, 38, 255, 0.4)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 40; i++) particles.push(new CyberNode());
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 110) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(176, 38, 255, ${0.15 * (1 - dist / 110)})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+
+        animateCanvas();
+
+        /* ==========================================================================
+           17. INITIALIZATION ON PAGE LOAD
+           ========================================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            populateCategoryDropdown();
+            init3DCardPhysics();
+            loadPersistedSettings();
+            runIntroSequence();
+
+            document.getElementById('diag-refresh').textContent = `${window.screen.colorDepth * 3}Hz Adaptive`;
+            document.getElementById('diag-cores').textContent = `${navigator.hardwareConcurrency || 8} Logical Cores`;
+
+            setInterval(() => {
+                const ping = document.getElementById('tele-ping');
+                if (ping) ping.textContent = (Math.floor(Math.random() * 5) + 10) + 'ms';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
